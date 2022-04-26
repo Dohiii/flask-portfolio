@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}Projekty{% endblock %}
+{% block styling %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/hide_hero.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Cards Blog Posts -->
+
+<section class="text">
+    <div class="text-content">
+        <h3>Projekty</h3>
+        <p>
+            Największym zaskoczeniem dorosłego człowieka może być odkrycie w życiu nowej pasji, która
+            wciąga,
+        </p>
+    </div>
+</section>
+
+
+<div class="band">
+    {% for post in posts %}
+    {% if post.featured %}
+
+    <div class="item-1">
+        <a href="/{{post.slug}}" class=" card">
+            <div class="thumb" style="background-image: url({{post.image}});"></div>
+            <article>
+                <h1>{{post.title}}</h1>
+                <span>{{post.created}}</span>
+            </article>
+        </a>
+    </div>
+    {% else %}
+    <div class="item-2">
+        <a href="/{{post.slug}}" class="card">
+            <div class="thumb" style="background-image: url({{post.image}});"></div>
+            <article>
+                <h1>{{post.title}}</h1>
+                <p>{{post.content}}</p>
+                <span>{{post.created}}</span>
+            </article>
+        </a>
+    </div>
+    {% endif %}
+
+
+
+
+    {% endfor %}
+
+
+
+</div>
+
+<!-- End of cards blog posts -->
+{% endblock %}

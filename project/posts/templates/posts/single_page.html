@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}{{post.title}}{% endblock title %}
+{% block styling %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/hide_hero.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<body>
+
+    <main>
+        <section class="text">
+            <div class="text-content">
+
+                <p>
+                    {{post.title}}
+                </p>
+            </div>
+        </section>
+
+
+        <section class="flex-columns ">
+            <div class="row">
+                <div class="column">
+                    <div class="column-1">
+
+                        <a href="edit/{{post.slug}}" id="edit_button">Edituj</a>
+                        <a href="delete/{{post.slug}}" id="delete_button">Usuń</a> 
+
+
+                        <h4>Pare slów o projekcie</h4>
+                        <p>{{post.content}}
+                            <br>
+                            <span>{{post.created}}</span>
+                        </p>
+
+                        <h4>GitHub projektu</h4>
+                        <a class='link_to_github' href='{{post.link}}'> {{post.link}}
+                        </a>
+                        <br>
+                        <br>
+                        <a href="{{ url_for('posts.posts') }}" id="back_button">przycisk wstecz</a>
+                    </div>
+                </div>
+                <div class="column post_image">
+                    <div class="column-2">
+                        <img src="{{post.image}}" alt="">
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </section>
+
+
+
+        {% endblock content %}

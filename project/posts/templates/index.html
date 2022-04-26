@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Dorokhov portfolio{% endblock %}
+
+<body>
+
+    {% block content %}
+
+    <main>
+        <section class="text">
+            <div class="text-content">
+                <h3>O mnie</h3>
+                <p>
+                    Największym zaskoczeniem dorosłego człowieka może być odkrycie w życiu nowej pasji, która
+                    wciąga,
+                    intryguje, wciąż czegoś uczy. Dla mnie, wcale nie tak dawno temu było to odkrycie (a właściwie
+                    powrót) do programowania. Będąc na etacie, postawiłem wszystko na jedną kartę i rzuciłem się w
+                    wir
+                    nauki. Jestem samoukiem, ze skłonnością do przesiadywania zbyt długich godzin przy komputerze,
+                    znanym z tego, że kombinuje aż nie rozwiążę problemu.
+                </p>
+            </div>
+        </section>
+
+
+        <section class="flex-columns ">
+            <div class="row">
+                <div class="column">
+                    <div class="column-1">
+                        <h1>Moje skille</h1>
+                        <h4>1. Front-end</h4>
+                        <p>Bez tego nie ma fronte-endu: HTML, CSS (SASS), JavaScript.
+                            Biblioteki i frameworki f-e: React, Bootstrap
+                        </p>
+
+                        <h4>2. Back-end </h4>
+                        <p>Nie jestem jeszcze mistrzem, ale zmierzam w tym kierunku: Node.js, Express
+                            Coming soon: Python
+                        </p>
+
+                        <h4>3* Wordpress</h4>
+                        <p>Popularny, znany, kto by się nie podjął? Z Wordpressem znamy się nie od dziś!</p>
+
+
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column-2">
+                        <img src="https://images.pexels.com/photos/220357/pexels-photo-220357.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="text">
+            <div class="text-content">
+                <h3> Masz pytania? </h3>
+                <a class="link team" href="./contact.html">Skontaktuj się</a>
+            </div>
+        </section>
+
+
+
+    </main>
+
+</body>
+{% endblock %}

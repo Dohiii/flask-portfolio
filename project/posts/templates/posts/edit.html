@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{{ super() }}
+{% block title %}Edituj Projekt{% endblock title %}
+
+{% block styling %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/hide_hero.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<main>
+    <div id="container">
+        <h1>Edituj Post</h1>
+        <form class="form" method="post">
+
+            {{ form.csrf_token }}
+
+            <div class="form-row">
+                {{form.title(
+                    class="name",
+                    placeholder="Nazwa postu"
+                )}}
+            </div>
+
+            <div class="form-row">
+                {{form.link(
+                class="form-row",
+                placeholder="Link do GitHub"
+            )}}
+            </div>
+
+            <div class="form-row">
+                {{form.image(
+                class="form-row",
+                placeholder="Link to Image"
+            )}}
+            </div>
+
+
+
+            <div class="form-row">
+                {{form.content(
+                class="form-row",
+                placeholder="Treść postu..."
+            )}}
+            </div>
+
+            <div class="form-row">
+                {{form.featured.label(
+                    class='form-row'
+                )}}
+                {{form.featured(
+                class="form-row",
+                placeholder="Is Featured"
+            )}}
+            </div>
+
+
+            <div class="submit">
+                <button id="form_button" type="submit">Wyślij</button>
+            </div>
+        </form>
+    </div>
+    <div class="line"></div>
+</main>
+
+
+
+
+{% endblock %}

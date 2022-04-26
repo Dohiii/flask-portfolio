@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Kontakt{% endblock %}
+{% block styling %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/hide_hero.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<body>
+  <div class="line"></div>
+
+  <main>
+    <div id="container">
+      <h1>Skontaktuj się</h1>
+      <form action="https://formspree.io/f/xqkwggvj" method="POST">
+        <div class="form-row">
+          <input class="name" type="text" name="name" required placeholder="Imię" />
+          <input class="email" type="email" name="email" required placeholder="Email" />
+        </div>
+
+        <textarea class="form-row" type="textarea" name="textarea" required placeholder="Mam pytanie..."></textarea>
+        <input type="text" name="_honey" style="display: none" />
+        <input type="hidden" name="_captcha" value="false" />
+        <!-- <input type="hidden" name="_next" value="https://dorokhov-portfolio.pl/thanks.html"> -->
+        <div class="submit">
+          <button id="form_button" type="submit">Wyślij</button>
+        </div>
+      </form>
+    </div>
+    <div class="line"></div>
+  </main>
+
+
+  <!-- partial -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="rellax.min.js"></script>
+  <script>
+    //default JS Setting
+    var rellax = new Rellax(".rellax", {
+      breakpoints: [576, 768, 1201, 1900],
+    });
+  </script>
+  <script>
+    //Enable Horizontal Parallax Scrolling
+    var rellax = new Rellax(".rellax", {
+      horizontal: true,
+    });
+  </script>
+</body>
+
+{% endblock %}
